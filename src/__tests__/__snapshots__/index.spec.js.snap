@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`injectRootAppElm should return a PersistGate react element 1`] = `
+<PersistGate
+  loading={null}
+  persistor={
+    Object {
+      "dispatch": [Function],
+      "flush": [Function],
+      "getState": [Function],
+      "pause": [Function],
+      "persist": [Function],
+      "purge": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <br />
+</PersistGate>
+`;
