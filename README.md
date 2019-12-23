@@ -2,9 +2,14 @@
 
 `feature-redux-persist` is a [feature-u](https://feature-u.js.org/) integration point to [redux-persist](https://github.com/rt2zz/redux-persist). It promotes the persistedReducerAspect _(a `feautre-u` plugin)_ that facilitates `redux-persist` integration to your features.
 
-`feature-reduc-persist` relies on [feature-redux](https://github.com/KevinAst/feature-redux) to provide `redux` integration.
+`feature-redux-persist` relies on [feature-redux](https://github.com/KevinAst/feature-redux) to provide `redux` integration.
 
 _You have to be aware of feature-u philosophy and know about is implementation before reading this documentation_
+
+[![Build Status](https://travis-ci.com/sylvainlg/feature-redux-persist.svg?branch=master)](https://travis-ci.com/sylvainlg/feature-redux-persist)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dfac1457c2ae4ffcb6baf29416de1e9e)](https://www.codacy.com/manual/sylvainlg/feature-redux-persist?utm_source=github.com&utm_medium=referral&utm_content=sylvainlg/feature-redux-persist&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/dfac1457c2ae4ffcb6baf29416de1e9e)](https://www.codacy.com/manual/sylvainlg/feature-redux-persist?utm_source=github.com&utm_medium=referral&utm_content=sylvainlg/feature-redux-persist&utm_campaign=Badge_Coverage)
+[![NPM Version Badge](https://img.shields.io/npm/v/feature-redux-persist.svg)](https://www.npmjs.com/package/feature-redux-persist)
 
 ## Install
 
