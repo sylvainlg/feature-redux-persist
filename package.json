@@ -4,6 +4,15 @@
   "description": "Module redux-persist pour feature-u",
   "main": "src/index.js",
   "scripts": {
+    "build:clean": "rimraf lib",
+    "build:plat:lib": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore spec.js",
+    "clean": "yarn build:clean && yarn cov:clean",
+    "cov": "jest src --coverage",
+    "cov:clean": "rimraf coverage",
+    "cov:publish": "cat coverage/lcov.info | codacy-coverage --verbose",
+    "pkgReview": "echo '*** Showing outdated installed packages:' && yarn outdated --long || true",
+    "prepublish": "npx yarn-run-all lint pkgReview clean build:plat:lib test cov",
+    "lint": "echo '*** Verify code quality (lint):' && eslint src",
     "test": "jest src"
   },
   "author": {
@@ -19,9 +28,14 @@
     "react": "*"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
+    "codacy-coverage": "^3.4.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.17.0",
     "feature-redux": "^1.0.1",
     "feature-u": "^2.1.1",
     "jest": "^24.9.0",
@@ -30,6 +44,7 @@
     "react-redux": "^7.1.3",
     "redux": "^4.0.4",
     "redux-mock-store": "^1.5.4",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "rimraf": "^3.0.0"
   }
 }
