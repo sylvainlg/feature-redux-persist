@@ -68,11 +68,11 @@ export default launchApp({
 
 This configuration is _required_.
 
-You can use every storage in that list: https://github.com/rt2zz/redux-persist#storage-engines
+You can use every storage in that list: [https://github.com/rt2zz/redux-persist#storage-engines]
 
 ### Promote reducers
 
-**/!\\** Before reading, you might take a look to https://github.com/KevinAst/feature-redux#usage.
+**/!\\** Before reading, you might take a look to [https://github.com/KevinAst/feature-redux#usage].
 
 In the `state.js`, there is some classic `redux` reducer.
 
