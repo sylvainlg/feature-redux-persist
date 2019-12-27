@@ -35,7 +35,7 @@ yarn add feature-redux-persist
 
 Within your mainline, register the **feature-redux** `reducerAspect` (see `**1**` below) and the **feature-redux-persist** `reducerPersistedAspect` (see `**2**`) to feature-u's [launchApp()](https://feature-u.js.org/cur/api.html#launchApp)
 
-**Note** `**3**` : `persistedReducerAspect` has a required config.storage\$ configuration item (see below)
+**Note** `**3**` : `persistedReducerAspect` has a required storage configuration parameter (see below)
 
 **Note** `**4**` : **ORDER MATTER**, you have to declare `persistedReducerAspect` **before** `reducerAspect` !
 
@@ -45,13 +45,12 @@ Within your mainline, register the **feature-redux** `reducerAspect` (see `**1**
 import {launchApp}                    from 'feature-u';
 import {createReducerAspect}          from 'feature-redux'; // **1**
 import {createPersistedReducerAspect} from 'feature-redux-persist'; // **2**
-import AsyncStorage from '@react-native-community/async-storage'; // for react-native
+import AsyncStorage                   from '@react-native-community/async-storage'; // for react-native
 import features                       from './feature';
 
 export default launchApp({
 
-  const persistedReducerAspect = createPersistedReducerAspect(); // **2**
-  persistedReducerAspect.config.storage$ = AsyncStorage; // **3**
+  const persistedReducerAspect = createPersistedReducerAspect(AsyncStorage); // **2**  **3**
   aspects: [
     persistedReducerAspect,                        // **4**
     createReducerAspect(),                         // **1**
@@ -67,13 +66,23 @@ export default launchApp({
 });
 ```
 
-### Configure
+### Syntax
 
-**config.storage\$**
+```js
++ createPersistedReducerAspect(storage): Aspect
+```
 
-This configuration is _required_.
+#### Parameters
+
+> **storage**
+
+This configuration parameter is _required_.
 
 You can use every storage in that list: https://github.com/rt2zz/redux-persist#storage-engines
+
+> **return value**
+
+An **feature-u** [Aspect](https://feature-u.js.org/cur/api.html#Aspect)
 
 ### Promote reducers
 
