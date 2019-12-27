@@ -7,7 +7,7 @@ describe('createPersistedReducerAspect', () => {
   it('should create a aspect instance', () => {
     const aspect = createPersistedReducerAspect();
     expect(typeof aspect).toBe('object');
-    expect(aspect.name).toBe('persistedreducer');
+    expect(aspect.name).toBe('unused_persistedreducer');
 
     expect(aspect).toMatchObject(
       expect.objectContaining({
@@ -35,18 +35,15 @@ describe('genesis', () => {
   });
 
   it('should be OK with config set', () => {
-    const aspect = createPersistedReducerAspect();
     // dummy object, this will fail in real usage when configuring redux-persist
-    aspect.config.storage$ = {};
-
+    const aspect = createPersistedReducerAspect({});
     expect(aspect.genesis()).toBeNull();
   });
 });
 
 describe('assembleAspectResources', () => {
   it('should fail', () => {
-    const aspect = createPersistedReducerAspect();
-    aspect.config.storage$ = {};
+    const aspect = createPersistedReducerAspect({});
 
     expect(() => aspect.assembleAspectResources({}, [])).toThrow(
       'You must configure feature-redux in order to make feature-redux-persist work'
@@ -54,8 +51,7 @@ describe('assembleAspectResources', () => {
   });
 
   it('should success', () => {
-    const aspect = createPersistedReducerAspect();
-    aspect.config.storage$ = {};
+    const aspect = createPersistedReducerAspect({});
 
     const reducerAspect = createReducerAspect();
     const aspects = [reducerAspect];
@@ -72,8 +68,7 @@ describe('assembleAspectResources', () => {
 
 describe('injectRootAppElm', () => {
   it('should return a PersistGate react element', () => {
-    const aspect = createPersistedReducerAspect();
-    aspect.config.storage$ = {};
+    const aspect = createPersistedReducerAspect({});
 
     const reducerAspect = createReducerAspect();
     const aspects = [reducerAspect];
