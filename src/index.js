@@ -3,37 +3,39 @@ import { createAspect } from 'feature-u';
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 
-export function createPersistedReducerAspect(name = 'persistedreducer') {
+// Internal: storage configuration
+let storage = null;
+
+// Internal: save reference to the feature-redux aspect
+let reducerAspect;
+
+export function createPersistedReducerAspect(storage$) {
+  storage = storage$;
+
   return createAspect({
-    name,
+    name: 'unused_persistedreducer',
     genesis,
     validateFeatureContent,
     assembleFeatureContent,
     assembleAspectResources,
     injectRootAppElm,
-    config: {
-      storage$: null,
-    },
   });
 }
 
-// To save reference to the feature-redux aspect
-let reducerAspect;
-
 function genesis() {
-  if (!this.config.storage$) {
+  if (!storage) {
     return `
     You must configure a storage for redux-persist
 
     In case of react (web) usage :
     import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
     [...]
-    persistedReducerAspect.config.storage$ = storage
+    persistedReducerAspect(storage)
 
     In case of react-native (mobile) usage :
     import AsyncStorage from '@react-native-community/async-storage';
     [...]
-    persistedReducerAspect.config.storage$ = AsyncStorage
+    persistedReducerAspect(AsyncStorage)
     `;
   }
   return null;
@@ -62,7 +64,7 @@ function assembleAspectResources(fassets, aspects) {
 
   // Inject persistReducer in the feature-redux appReducer
   reducerAspect.appReducer = persistReducer(
-    { key: 'root', storage: this.config.storage$, whitelist: [] },
+    { key: 'root', storage: storage, whitelist: [] },
     reducerAspect.appReducer
   );
 }
