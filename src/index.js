@@ -43,7 +43,9 @@ function validateFeatureContent() {}
 function assembleFeatureContent() {}
 
 function assembleAspectResources(fassets, aspects) {
-  reducerAspect = aspects.filter(el => el.name === 'reducer').shift();
+  reducerAspect = aspects
+    .filter(el => typeof el.getReduxStore === 'function')
+    .shift();
 
   if (!reducerAspect) {
     throw new Error(
