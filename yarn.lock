@@ -1671,7 +1671,7 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.1:
+cross-spawn@^7.0.0, cross-spawn@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
   integrity sha512-u7v4o84SwFpD32Z8IIcPZ6z1/ie24O6RU3RbtL5Y316l3KuHVPx9ItBgWQ6VlfAFnRnTtMUrsQ9MUUTuEZjogg==
@@ -2176,10 +2176,10 @@ feature-redux@^1.0.1:
     lodash.isfunction "^3.0.8"
     lodash.isstring "^4.0.1"
 
-feature-u@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/feature-u/-/feature-u-2.1.1.tgz#37561f5be3129aa7d33617c7a5d9dc91d4586872"
-  integrity sha512-EKB4SRX0j7R2FUOLNy+qolQwGyU6JQD+RPnNotMEifgktsLMG4ouePWYs2dlCzMx3V8GQ4SopfEPu9FRHYchIg==
+feature-u@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/feature-u/-/feature-u-3.0.0.tgz#2a4b885237334fbd2ee8d4faaaf743b7cc9cadb0"
+  integrity sha512-JJmoXWlJumuGU5gxlInZFxd7rQksgMRqrMVKVYm7+SuHV4uza62ydgawEr0FBZ6N+2iczyGTsM/HE33km1jCUQ==
   dependencies:
     create-react-context "^0.2.2"
     lodash.isfunction "^3.0.8"
