@@ -15,8 +15,6 @@ export function createPersistedReducerAspect(storage$) {
   return createAspect({
     name: 'unused_persistedreducer',
     genesis,
-    validateFeatureContent,
-    assembleFeatureContent,
     assembleAspectResources,
     injectRootAppElm,
   });
@@ -40,9 +38,6 @@ function genesis() {
   }
   return null;
 }
-
-function validateFeatureContent() {}
-function assembleFeatureContent() {}
 
 function assembleAspectResources(fassets, aspects) {
   reducerAspect = aspects
