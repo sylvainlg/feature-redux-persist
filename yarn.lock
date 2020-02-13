@@ -2168,12 +2168,13 @@ fbjs@^0.8.0:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-feature-redux@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/feature-redux/-/feature-redux-1.0.1.tgz#8b5033037f749285b4bd39790e2fcdccb9227c35"
-  integrity sha512-ck44QBAc2ubZmp1E6ZwojLrleZlHYkYJbOtycTPWvlmM7fFVQCIqIW2nduQeQvRs6D3hxPqCjJftusIDfckR4w==
+feature-redux@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/feature-redux/-/feature-redux-3.0.0.tgz#280efb7337032be7b00b8254e39764d7fd97fb13"
+  integrity sha512-zyGqE19TJkszOU2qKgmMPUFZV3HCyvsshZD1qGz0QXwzUchVPbfNjZlhLjcaa91QJoaydX5uRO3jVj3g89hpFw==
   dependencies:
     lodash.isfunction "^3.0.8"
+    lodash.isplainobject "^4.0.6"
     lodash.isstring "^4.0.1"
 
 feature-u@^3.0.0:
